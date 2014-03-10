@@ -4,11 +4,8 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  var msg = "woopee";
-
   var data = fs.readFileSync('./index.html');
   console.log(data);
-
   response.send(data.toString('utf8'));
 });
 
