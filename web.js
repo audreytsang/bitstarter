@@ -8,11 +8,11 @@ app.get('/', function(request, response) {
 //  var data;
 //  var err;
 
-  fs.readFileSync('./index.html', function (err, data) {
-    if (err) throw err;
+//  fs.readFileSync('./index.html', function (err, data) {
+//    if (err) throw err;
 //    msg = data.toString('utf-8');
-    console.log(data);
-  });
+//    console.log(data);
+//  });
 
   response.send(msg);
 });
