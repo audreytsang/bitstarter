@@ -6,13 +6,10 @@ app.use(express.logger());
 app.get('/', function(request, response) {
   var msg = "woopee";
 
-  fs.readFileSync('./index.html', function (err, data) {
-    if (err) throw err;
-//    msg = data.toString('utf-8');
-//    console.log(data);
-  });
+  var data = fs.readFileSync('./index.html');
+  console.log(data);
 
-  response.send(msg);
+  response.send(buf.toString(data));
 });
 
 var port = process.env.PORT || 5000;
