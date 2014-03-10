@@ -5,11 +5,13 @@ app.use(express.logger());
 
 app.get('/', function(request, response) {
   var msg = "woopee";
+//  var data;
+//  var err;
 
-  fs.readFileSync('index.html', function (err, data) {
+  fs.readFileSync('./index.html', function (err, data) {
     if (err) throw err;
-    msg = data.toString('utf-8');
-    console.log(msg);
+//    msg = data.toString('utf-8');
+    console.log(data);
   });
 
   response.send(msg);
