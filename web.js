@@ -3,7 +3,14 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('Hello World 2!');
+  var msg = "";
+
+  fs.readFile('index.html', function (err, data) {
+    if (err) throw err;
+    msg = data.toString('utf-8');
+   });
+
+  response.send(msg);
 });
 
 var port = process.env.PORT || 5000;
